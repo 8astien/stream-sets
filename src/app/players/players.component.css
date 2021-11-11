@@ -1,0 +1,9 @@
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-width: 85vw;
+  min-height: 85vh;
+  border-top: 2px solid #6C6B6B;
+  border-left: 2px solid #6C6B6B;
+}
