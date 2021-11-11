@@ -5,19 +5,23 @@
 
     <div class="sets-list">
       <ul id="set-list-wrap">
-        <li class="editable"><a href="">Set 1</a></li>
-        <li class="editable"><a href="">Set 2</a></li>
-        <li class="editable"><a href="">Set 3</a></li>
-        <li class="editable"><a href="">Set 4</a></li>
+        <!--*ngFor="let item of setsList" loop list Db-->
+        <!--<li class="editable"><a>{{item}}</a></li>-->
+        <li class="editable"><a>Set 1</a></li>
+        <li class="editable"><a>Set 2</a></li>
+        <li class="editable"><a>Set 3</a></li>
+        <li class="editable"><a>Set 4</a></li>
       </ul>
     </div>
 
     <div class="streams-list">
       <ul>
-        <li><a href="">Gotaga</a></li>
+        <!--*ngFor="let item of setsList" loop list Db-->
+        <!--<li><a href="">{{item}}</a></li>-->
+        <li><a href="">Gotage</a></li>
         <li><a href="">aminematue</a></li>
         <li><a href="">JeelTV</a></li>
-        <li><a href="">zacknani</a></li>
+        <li><a href="">zakcnani</a></li>
         <li><a href="">Inoxtag</a></li>
       </ul>
     </div>
@@ -26,19 +30,22 @@
 
   <div class="head-wrapper">
     <div class="header">
-
-      <div id="menu-inputs">
-        <!-- Locate and place Js generated buttons -->
+      <div *ngIf="isShown">
+        <form [formGroup]="DataForm" (ngSubmit)="postDataSet()" id="login-form" action="" method="post">
+          <label id="test" for="nameSet">Set Name :</label>
+          <input id="setNameInput" type="text" name="nameSet" formControlName="nameSet" value="" required>
+          <label for="descSet">Streamers List :</label>
+          <input id="setDescInput" type="descSet" name="descSet" formControlName="descSet" value="" required>
+          <button id="sendButton" type="submit" name="signin-btn">Create</button>
+        </form>
       </div>
-
-      <div id="btnGen"></div>
-      <a href="#" onclick="checkExist();">Manage Sets</a>
+      <div id="btnGen" #btnGen></div>
+      <a (click)="checkExist();">Manage Sets</a>
       <i class="far fa-user-circle"></i>
     </div>
-      <div class="content">
-        <app-players></app-players>
-      </div>
+    <div class="content">
+      <app-players></app-players>
+    </div>
   </div>
 
 </div>
-<router-outlet></router-outlet>

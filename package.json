@@ -21,10 +21,11 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "twitch-js": "^2.0.0-beta.42",
+    "twitch-player": "^2.0.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.11",
+    "@angular-devkit/build-angular": "^12.2.13",
     "@angular/cli": "~12.2.11",
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",

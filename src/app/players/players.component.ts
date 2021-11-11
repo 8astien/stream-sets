@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Twitch from 'twitch.js';
+import { TwitchEmbed, TwitchEmbedLayout } from 'twitch-player';
 
 @Component({
   selector: 'app-players',
@@ -8,16 +8,22 @@ import Twitch from 'twitch.js';
 })
 export class PlayersComponent implements OnInit {
 
-  embedTwitch! : any;
-
   constructor() { }
 
   ngOnInit() :void {
-        var options = {
-            width: 500,
-            height: 300,
-            channel: "gotaga",
-          };
+    
+    const embed = new TwitchEmbed('sardoche', {
+      width: 1200/1.2,
+      height: 720/1.2,
+      channel: 'sardoche',
+      layout: TwitchEmbedLayout.VIDEO
+    });
+    const embed2 = new TwitchEmbed('kameto', {
+      width: 1200/1.2,
+      height: 720/1.2,
+      channel: 'kamet0',
+      layout: TwitchEmbedLayout.VIDEO
+    });
        }
 
 }
