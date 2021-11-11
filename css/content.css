@@ -1,0 +1,15 @@
+.content {
+  width: 100%;
+  max-width: 85vw;
+  border-left: 1px solid #6C6B6B;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player iframe{
+  width: 600px;
+  height: 400px;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+}

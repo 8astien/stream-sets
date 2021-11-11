@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navs.css">
+  <link rel="stylesheet" href="css/content.css">
+  <script src="https://kit.fontawesome.com/9ac44fc111.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <title>Stream Sets</title>
+</head>
+
+<body data-barba="wrapper" onload="main()">
+
+  <div class="left-nav">
+
+    <h1>Stream Sets</h1>
+
+    <div class="sets-list">
+      <ul id="set-list-wrap">
+        <li class="editable"><a href="">Set 1</a></li>
+        <li class="editable"><a href="">Set 2</a></li>
+        <li class="editable"><a href="">Set 3</a></li>
+        <li class="editable"><a href="">Set 4</a></li>
+      </ul>
+    </div>
+
+    <div class="streams-list">
+      <ul>
+        <li><a href="">Gotaga</a></li>
+        <li><a href="">aminematue</a></li>
+        <li><a href="">JeelTV</a></li>
+        <li><a href="">zacknani</a></li>
+        <li><a href="">Inoxtag</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="wrapper">
+    <div class="header">
+
+      <div class="menu">
+        <div id="menu-inputs">
+
+        </div>
+        <div id="btnGen"></div>
+        <a href="#" onclick="checkExist();">Manage Sets</a>
+        <i class="far fa-user-circle"></i>
+      </div>
+
+    </div>
+
+    <main data-barba="container" data-barba-namespace="home" class="content">
+      <!-- CONTENT BARBA FOR LATER USE-->
+
+      <!-- Add a placeholder for the Twitch embed -->
+      <div class="players">
+        <div id="gotaga" class="player"></div>
+        <div id="kameto" class="player"></div>
+      </div>
+      <!-- Load the Twitch embed script -->
+      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+      <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+      <script type="text/javascript">
+        new Twitch.Player("kameto", {
+          channel: "kamet0"
+        });
+        new Twitch.Player("gotaga", {
+          channel: "gotaga"
+        });
+      </script>
+
+    </main>
+
+  </div>
+
+
+
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans&display=swap');
+
+html{
+  font-size: 20px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  display: flex;
+  background: #262626;
+}
+
+/********************  LEFT NAVIGATION STYLE  **********************/
+.left-nav {
+ width: 15vw;
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+}
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5rem;
+  margin-top: 7vh;
+}
+.sets-list, .streams-list {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5vh;
+  display: flex;
+
+}
+.sets-list li, .streams-list li {
+  padding: 0.8rem 0 0 0.8rem;
+  display: flex;
+  flex-direction: row;
+}
+.sets-list li a {
+  min-width: 15vh;
+}
+.sets-list li i {
+  margin-left: auto;
+  margin-right: 1rem;
+  color: #ffcc00;
+}
+
+.sets-list li i:hover {
+  color: #ccaa00;
+}
+.sets-list li i:active {
+  color: #ccaa00;
+  text-shadow: 0px 0px 5px 1px #ffcc00;
+}
+
+.sets-list a:hover, .streams-list a:hover{
+  color: #6C6B6B;
+}
+
+/********************   HEADER STYLE   **********************/
+.header {
+  width: 85vw;
+  height: 15vh;
+  border-bottom: 1px solid #6C6B6B;
+  border-left: 1px solid #6C6B6B;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+}
+.menu {
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+.menu a {
+  color: white;
+  margin-right: 2rem;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 0.8rem;
+  transition: 200ms;
+}
+.menu a:hover {
+  background-image: linear-gradient(#F43CBD, #F43CBD);
+  background-position: bottom center;
+  background-size: 80% 2px;
+  background-repeat: no-repeat;
+  padding-bottom: 4px;
+  transition: 40ms ease;
+}
+.menu a:active {
+  color: #F43CBD;
+}
+.menu i{
+  font-size: 2rem;
+  margin-right: 2rem;
+  transition: 250ms;
+}
+.menu i:hover {
+  color: #F43CBD;
+  cursor: pointer;
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#btnGen button {
+  margin: 0 20px;
+  padding: 10px;
+  background: none;
+  color: white;
+  border: 2px solid #6C6B6B;
+  border-radius: 10px;
+  transition: 80ms ease;
+}
+#createSet:hover {
+  box-shadow:  0px -0px 12px 0 #00e673;
+  color: #00e673;
+  border: 2px solid #00e673;
+  transition: 20ms ease;
+}
+#createSet:active{
+  box-shadow: inset -1px -1px 8px 0 #00e673;
+}
+#editSet:hover {
+  box-shadow:  0px -0px 12px 0 #ffcc00;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+}
+#editSet:active {
+  box-shadow: inset -1px -1px 8px 0 #ffcc00;
+}
+
+#menu-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  min-width: 50vw;
+}
+#menu-inputs input, textarea {
+  border: 2px solid white;
+  background: none;
+  color: white;
+}
+#setNameInput {
+  width: 100px;
+  height: 30px;
+}
+#setDescInput {
+  width: 200px;
+  height: 50px;
+}
+
+#menu-inputs button {
+  padding: 10px;
+  background: none;
+  color: white;
+  border: 2px solid #6C6B6B;
+  border-radius: 10px;
+  transition: 80ms ease;
+  box-shadow:  0px -0px 6px 0 #00e673;
+}
+#menu-inputs button:hover {
+  box-shadow:  0px -0px 12px 0 #00e673;
+  color: #00e673;
+  border: 2px solid #00e673;
+  transition: 20ms ease;
+}
+#menu-inputs button:active {
+  box-shadow: inset -1px -1px 8px 0 #00e673;
+}
