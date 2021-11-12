@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { PlayersComponent } from './players/players.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/menu' , pathMatch:"full"},
-  {path: 'menu', component: TopMenuComponent},
-  {path: 'players', component: PlayersComponent},
-  {path: 'login', component: LoginComponent}
+  {path: '', redirectTo: '/home' , pathMatch:"full"},
+  {path: 'home', component: PlayersComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

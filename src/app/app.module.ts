@@ -7,6 +7,8 @@ import { PlayersComponent } from './players/players.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LeftNavComponent } from './left-nav/left-nav.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { LoginComponent } from './login/login.component';
     TopMenuComponent,
     PlayersComponent,
     LoginComponent,
+    LeftNavComponent,
+    SignupComponent,
 
   ],
   imports: [

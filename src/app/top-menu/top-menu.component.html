@@ -1,33 +1,4 @@
 <div class="wrapper">
-  <div class="left-nav">
-
-    <h1>Stream Sets</h1>
-
-    <div class="sets-list">
-      <ul id="set-list-wrap">
-        <!--*ngFor="let item of setsList" loop list Db-->
-        <!--<li class="editable"><a>{{item}}</a></li>-->
-        <li class="editable"><a>Set 1</a></li>
-        <li class="editable"><a>Set 2</a></li>
-        <li class="editable"><a>Set 3</a></li>
-        <li class="editable"><a>Set 4</a></li>
-      </ul>
-    </div>
-
-    <div class="streams-list">
-      <ul>
-        <!--*ngFor="let item of setsList" loop list Db-->
-        <!--<li><a href="">{{item}}</a></li>-->
-        <li><a href="">Gotage</a></li>
-        <li><a href="">aminematue</a></li>
-        <li><a href="">JeelTV</a></li>
-        <li><a href="">zakcnani</a></li>
-        <li><a href="">Inoxtag</a></li>
-      </ul>
-    </div>
-
-  </div>
-
   <div class="head-wrapper">
     <div class="header">
       <div *ngIf="isShown">
@@ -40,16 +11,10 @@
         </form>
       </div>
       <div id="btnGen" #btnGen></div>
-      <a class="linkAnim"(click)="checkExist();">Manage Sets</a>
-      <i class="far fa-user-circle"></i>
+      <a class="linkAnim" (click)="checkExist();">Manage Sets</a>
+      <i routerLink="/login" class="far fa-user-circle"></i>
     </div>
-    <div class="content">
-      <app-players *ngIf="hasRoute('menu')"></app-players>
-      <app-login *ngIf="hasRoute('login')"></app-login>
 
-
-
-    </div>
   </div>
 
 </div>
