@@ -3,14 +3,16 @@
   <div class="subwrap">
     <app-top-menu></app-top-menu>
     <div class="login-form">
-        <div class="login-box">
+      <div class="login-box">
+        <form [formGroup]="LoginForm" (ngSubmit)="postLogin()" id="login-form">
           <label id="test" for="username">Username : </label>
           <input type="text" name="username" formControlName="username" value="" required>
           <label for="password">Password : </label>
           <input type="password" name="password" formControlName="password" value="" required>
           <button type="submit" name="signin-btn">Log In</button>
-          <button id="signUpBtn"routerLink="/signup">Sign Up</button>
-        </div>
+          <button id="signUpBtn" routerLink="/signup">Sign Up</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
