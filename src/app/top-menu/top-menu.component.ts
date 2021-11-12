@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpclientService } from '../services/httpclient.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-menu',
@@ -11,7 +12,7 @@ import { HttpclientService } from '../services/httpclient.service';
 export class TopMenuComponent implements OnInit {
 
   constructor(private httpclientservice: HttpclientService, private el: ElementRef,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2, private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -57,7 +58,6 @@ export class TopMenuComponent implements OnInit {
 
     let createBtn = document.getElementById('createSet')!;
     let editBtn = document.getElementById('editSet')!;
-
     let parent = this.renderer.parentNode(createBtn);
     parent.removeChild(createBtn);
     parent.removeChild(editBtn);
@@ -107,5 +107,8 @@ export class TopMenuComponent implements OnInit {
       console.log("Bienvenue : " + res["username"]);
     })
   }
+  hasRoute(route: string) {
+   return this.router.url.includes(route);
+ }
 
 }

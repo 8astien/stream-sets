@@ -35,16 +35,20 @@
           <label id="test" for="nameSet">Set Name :</label>
           <input id="setNameInput" type="text" name="nameSet" formControlName="nameSet" value="" required>
           <label for="descSet">Streamers List :</label>
-          <input id="setDescInput" type="descSet" name="descSet" formControlName="descSet" value="" required>
+          <textarea id="setDescInput" type="descSet" name="descSet" formControlName="descSet" value="" required></textarea>
           <button id="sendButton" type="submit" name="signin-btn">Create</button>
         </form>
       </div>
       <div id="btnGen" #btnGen></div>
-      <a (click)="checkExist();">Manage Sets</a>
+      <a class="linkAnim"(click)="checkExist();">Manage Sets</a>
       <i class="far fa-user-circle"></i>
     </div>
     <div class="content">
-      <app-players></app-players>
+      <app-players *ngIf="hasRoute('menu')"></app-players>
+      <app-login *ngIf="hasRoute('login')"></app-login>
+
+
+
     </div>
   </div>
 

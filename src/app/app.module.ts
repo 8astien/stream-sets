@@ -6,6 +6,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { PlayersComponent } from './players/players.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {  HttpClientModule } from '@angular/common/http';
     AppComponent,
     TopMenuComponent,
     PlayersComponent,
+    LoginComponent,
 
   ],
   imports: [
