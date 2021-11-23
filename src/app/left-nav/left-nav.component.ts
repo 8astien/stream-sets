@@ -9,7 +9,12 @@ export class LeftNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+  printPlayers() {
+    let streamList = ["Gotaga", "aminematue", "JeeTV", "zacknani", "Inoxtag"];
+    streamList.forEach(function (value) {
+      console.log(value);
+    });
   }
 
 }

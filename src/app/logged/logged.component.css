@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+}
+.subwrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logged {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    margin-top: 2rem;
+}
+.logged button {
+    margin-top: 2rem;
+    background-color: indianred;
+    padding: 10px;
+    color: white;
+    border: 2px solid indianred;
+    border-radius: 10px;
+    transition: 100ms ease;
+}
+.logged button:hover {
+    background-color: rgb(150, 73, 73);
+    transition: 200ms ease;
+}
+.logged button:active {
+    transform: translateY(2px);
+    box-shadow: inset -1px 0px 2px 0 #dfdfdf;
+    transition: 200ms ease;
+}

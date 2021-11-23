@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TwitchEmbed, TwitchEmbedLayout } from 'twitch-player';
 
+
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
@@ -11,7 +12,7 @@ export class PlayersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() :void {
-
+   
     const embed = new TwitchEmbed('sardoche', {
       width: 1200/2,
       height: 720/2,
@@ -24,6 +25,12 @@ export class PlayersComponent implements OnInit {
       channel: 'kamet0',
       layout: TwitchEmbedLayout.VIDEO
     });
-       }
+  }
+  // printPlayers() {
+  //   let streamList = ["Gotaga", "aminematue", "JeeTV", "zacknani", "Inoxtag"];
+  //   streamList.forEach(function (value) {
+  //     console.log(value);
+  //   });
+  // }
 
 }

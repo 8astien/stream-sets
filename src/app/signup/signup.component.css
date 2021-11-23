@@ -4,11 +4,12 @@
 .subwrap{
   display: flex;
   flex-direction: column;
-}
-.login-form {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+#account-form {
+  display: flex;
+  flex-direction: column;
 }
 .login-box {
   margin-top: 2rem;
@@ -18,13 +19,13 @@
   flex-direction: column;
   align-items: center;
 }
-
 .login-box label, input, button {
   margin-top: 2rem;
 }
 .login-box label {
   font-family: 'Luckiest Guy', cursive;
   font-size: 1.2rem;
+  text-align: center;
 }
 .login-box input {
   height: 1.2rem;
@@ -42,16 +43,4 @@
   color: #009cc6;
   border: 2px solid #009cc6;
   transition: 20ms ease;
-}
-#signUpBtn:hover {
-  box-shadow:  0px -0px 12px 0 #00b00b;
-  color: #00b00b;
-  border: 2px solid #00b00b;
-  transition: 20ms ease;
-}
-#signUpBtn:active {
-  box-shadow: inset -1px -1px 8px 0 #00b00b;
-}
-.login-box button:active {
-  box-shadow: inset -1px -1px 8px 0 #009cc6;
 }

@@ -9,6 +9,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoggedComponent } from './logged/logged.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     LeftNavComponent,
     SignupComponent,
+    LoggedComponent,
 
   ],
   imports: [

@@ -26,6 +26,7 @@ h1 {
 }
 .sets-list li a {
   min-width: 100%;
+  cursor: pointer;
 } 
 .sets-list li i {
   margin-left: auto;
