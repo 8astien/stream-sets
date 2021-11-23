@@ -5,11 +5,12 @@
 .subwrap{
   display: flex;
   flex-direction: column;
-}
-.login-form {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+#account-form {
+  display: flex;
+  flex-direction: column;
 }
 .login-box {
   margin-top: 2rem;

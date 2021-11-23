@@ -38,6 +38,7 @@
   color: #F43CBD;
   cursor: pointer;
 }
+/******* BUTTONS STYLE  ******/
 #createSet {
   margin: 0 20px;
   padding: 10px;
@@ -64,6 +65,7 @@
 }
 #createSet:active{
   box-shadow: inset -1px -1px 8px 0 #00e673;
+  transform: translateY(1px);
 }
 #editSet:hover {
   box-shadow:  0px -0px 12px 0 #ffcc00;
@@ -72,9 +74,11 @@
 }
 #editSet:active {
   box-shadow: inset -1px -1px 8px 0 #ffcc00;
+  transform: translateY(1px);
 }
 
-#login-form {
+/******** CREATION FORM STYLES ********/
+#creation-form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -82,7 +86,7 @@
   width: 50vw;
   min-width: 50vw;
 }
-#login-form input, textarea {
+#creation-form input, textarea {
   border: 2px solid white;
   background: none;
   color: white;
@@ -95,7 +99,7 @@
   width: 200px;
   height: 50px;
 }
-#login-form button {
+#creation-form button {
   padding: 10px;
   background: none;
   color: white;
@@ -104,12 +108,16 @@
   transition: 80ms ease;
   box-shadow:  0px -0px 6px 0 #00e673;
 }
-#login-form button:hover {
+#creation-form button:hover {
   box-shadow:  0px -0px 12px 0 #00e673;
   color: #00e673;
   border: 2px solid #00e673;
   transition: 20ms ease;
 }
-#login-form button:active {
+#creation-form button:active {
   box-shadow: inset -1px -1px 8px 0 #00e673;
+  transform: translateY(1px);
+}
+.fas fa-ban {
+  color: red;
 }

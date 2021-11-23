@@ -61,18 +61,16 @@ export class TopMenuComponent implements OnInit {
     let parent = this.renderer.parentNode(createBtn);
     parent.removeChild(createBtn);
     parent.removeChild(editBtn);
+    this.isShown = false;
   }
 
   createSetButtons() {
     const buttonCreate = this.renderer.createElement('button');
     const textCreate = this.renderer.createText('Create Set');
-
     const buttonEdit = this.renderer.createElement('button');
     const textEdit = this.renderer.createText('Edit Set');
-
     this.renderer.setAttribute(buttonCreate, "id", "createSet");
     this.renderer.setAttribute(buttonEdit, "id", "editSet");
-
     this.renderer.appendChild(buttonCreate, textCreate);
     this.renderer.appendChild(buttonEdit, textEdit);
     this.renderer.listen(buttonCreate, 'click', this.showForm.bind(this));
@@ -90,8 +88,11 @@ export class TopMenuComponent implements OnInit {
       let setList = document.getElementsByClassName("editable");
       Array.from(setList).forEach(function (element) {
         let createEdit = document.createElement("a");
+        let createDelete = document.createElement("a");
         createEdit.className = "far fa-edit";
+        createDelete.className = "fas fa-ban";
         element.appendChild(createEdit);
+        element.appendChild(createDelete);
       });
     }
     this.editEnable = true;
