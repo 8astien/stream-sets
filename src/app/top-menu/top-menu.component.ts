@@ -33,7 +33,6 @@ export class TopMenuComponent implements OnInit {
   })
 
   setsList = ["set1", "set2", "set3", "set4"];
-  streamList = ["Gotaga", "aminematue", "JeeTV", "zacknani", "Inoxtag"];
 
   getNameSet() {
     return this.DataForm.get('nameSet')!.value;
@@ -56,7 +55,7 @@ export class TopMenuComponent implements OnInit {
 
   deleteSetButtons() {
 
-    let createBtn = document.getElementById('createSet')!;
+    let createBtn = document.getElementById('createSet')!; 
     let editBtn = document.getElementById('editSet')!;
     let parent = this.renderer.parentNode(createBtn);
     parent.removeChild(createBtn);

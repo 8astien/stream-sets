@@ -13,24 +13,20 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit() :void {
    
-    const embed = new TwitchEmbed('sardoche', {
-      width: 1200/2,
-      height: 720/2,
-      channel: 'sardoche',
-      layout: TwitchEmbedLayout.VIDEO
-    });
-    const embed2 = new TwitchEmbed('kameto', {
-      width: 1200/2,
-      height: 720/2,
-      channel: 'kamet0',
-      layout: TwitchEmbedLayout.VIDEO
+  }
+  printPlayers() {
+    let streamList = ["gotaga", "aminematue", "jeeltv", "zacknani", "inoxtag"];
+    streamList.forEach(function (value) {
+      let playerFrame = document.createElement("div");
+      playerFrame.id = value;
+      playerFrame.className = "player";
+      document.getElementById("players")!.appendChild(playerFrame);
+      const embed = new TwitchEmbed(value, {
+        width: 1200/2,
+        height: 720/2,
+        channel: value,
+        layout: TwitchEmbedLayout.VIDEO
+      });
     });
   }
-  // printPlayers() {
-  //   let streamList = ["Gotaga", "aminematue", "JeeTV", "zacknani", "Inoxtag"];
-  //   streamList.forEach(function (value) {
-  //     console.log(value);
-  //   });
-  // }
-
 }
