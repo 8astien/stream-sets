@@ -1,5 +1,4 @@
 <div class="wrapper">
-  <div class="head-wrapper">
     <div class="header">
       <div *ngIf="isShown">
         <form [formGroup]="DataForm" (ngSubmit)="postDataSet()" id="creation-form">
@@ -14,7 +13,4 @@
       <a class="linkAnim" (click)="checkExist();">Manage Sets</a>
       <i routerLink="/login" class="far fa-user-circle"></i>           
     </div>
-
-  </div>
-
 </div>

@@ -1,9 +1,12 @@
 .wrapper {
   display: flex;
+  width: 85vw;
+  max-width: 100%;
 }
 .subwrap{
   display: flex;
   flex-direction: column;
+
 }
 #players {
   display: flex;

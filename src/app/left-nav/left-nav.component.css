@@ -1,7 +1,8 @@
 /********************  LEFT NAVIGATION STYLE  **********************/
 .left-nav {
  width: 15vw;
- height: 100vh;
+ min-height: 100vh;
+ height: 100%;
  border-right: 2px solid #6C6B6B;
  display: flex;
  flex-direction: column;

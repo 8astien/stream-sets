@@ -2,7 +2,8 @@
 /********************   HEADER STYLE   **********************/
 .header {
   width: 85vw;
-  height: 15vh;
+  height: 100px;
+  max-height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -38,6 +39,7 @@
   color: #F43CBD;
   cursor: pointer;
 }
+
 /******* BUTTONS STYLE  ******/
 #createSet {
   margin: 0 20px;
