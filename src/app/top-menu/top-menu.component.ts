@@ -54,7 +54,6 @@ export class TopMenuComponent implements OnInit {
   }
 
   deleteSetButtons() {
-
     let createBtn = document.getElementById('createSet')!; 
     let editBtn = document.getElementById('editSet')!;
     let parent = this.renderer.parentNode(createBtn);

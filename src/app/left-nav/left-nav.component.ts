@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TwitchEmbed, TwitchEmbedLayout } from 'twitch-player';
 
 @Component({
   selector: 'app-left-nav',
@@ -11,10 +12,18 @@ export class LeftNavComponent implements OnInit {
 
   ngOnInit(): void { }
   printPlayers() {
-    let streamList = ["Gotaga", "aminematue", "JeeTV", "zacknani", "Inoxtag"];
+    let streamList = ["gotaga", "aminematue", "jeeltv", "zacknani", "inoxtag"];
     streamList.forEach(function (value) {
-      console.log(value);
+      let playerFrame = document.createElement("div");
+      playerFrame.id = value;
+      playerFrame.className = "player";
+      document.getElementById("players")!.appendChild(playerFrame);
+      const embed = new TwitchEmbed(value, {
+        width: 1200/2,
+        height: 720/2,
+        channel: value,
+        layout: TwitchEmbedLayout.VIDEO
+      });
     });
   }
-
 }

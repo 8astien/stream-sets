@@ -6,7 +6,7 @@
     <ul id="set-list-wrap">
       <!--*ngFor="let item of setsList" loop list Db-->
       <!--<li class="editable"><a>{{item}}</a></li>-->
-      <li class="editable"><a>Set 1</a></li>
+      <li class="editable"><a (click)="printPlayers();">Set 1</a></li>
       <li class="editable"><a>Set 2</a></li>
       <li class="editable"><a>Set 3</a></li>
       <li class="editable"><a>Set 4</a></li>
@@ -15,7 +15,7 @@
 
   <div class="streams-list">
     <ul>
-      <!--*ngFor="let item of setsList" loop list Db-->
+      <!--*ngFor="let item of streamsList" loop list Db-->
       <!--<li><a href="">{{item}}</a></li>-->
       <li><a href="">Gotaga</a></li>
       <li><a href="">aminematue</a></li>
