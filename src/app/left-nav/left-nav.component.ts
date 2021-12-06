@@ -22,6 +22,7 @@ export class LeftNavComponent implements OnInit {
         width: 1200/2,
         height: 720/2,
         channel: value,
+        muted: true,
         layout: TwitchEmbedLayout.VIDEO
       });
     });

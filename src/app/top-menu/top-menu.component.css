@@ -44,38 +44,33 @@
 #createSet {
   margin: 0 20px;
   padding: 10px;
-  background: none;
+  background-color: #16a55e;
   color: white;
-  border: 2px solid #6C6B6B;
+  border: none;
   border-radius: 10px;
   transition: 80ms ease;
 }
 #editSet {
   margin: 0 20px;
   padding: 10px;
-  background: none;
-  color: white;
-  border: 2px solid #6C6B6B;
+  background-color: #bd6501;
+  color: rgb(233, 233, 233);
+  border: none;
   border-radius: 10px;
   transition: 80ms ease;
 }
 #createSet:hover {
-  box-shadow:  0px -0px 12px 0 #00e673;
-  color: #00e673;
-  border: 2px solid #00e673;
-  transition: 20ms ease;
+  background-color: #128149;
 }
 #createSet:active{
-  box-shadow: inset -1px -1px 8px 0 #00e673;
+  box-shadow: inset -1px -1px 2px 0 #68df51;
   transform: translateY(1px);
 }
 #editSet:hover {
-  box-shadow:  0px -0px 12px 0 #ffcc00;
-  color: #ffcc00;
-  border: 2px solid #ffcc00;
+  background-color: #a35701;
 }
 #editSet:active {
-  box-shadow: inset -1px -1px 8px 0 #ffcc00;
+  box-shadow: inset -1px -1px 2px 0px #ffcc00;
   transform: translateY(1px);
 }
 
@@ -102,18 +97,17 @@
   height: 50px;
 }
 #creation-form button {
+  margin: 0 20px;
   padding: 10px;
-  background: none;
+  background-color: #16a55e;
   color: white;
-  border: 2px solid #6C6B6B;
+  border: none;
   border-radius: 10px;
   transition: 80ms ease;
-  box-shadow:  0px -0px 6px 0 #00e673;
 }
 #creation-form button:hover {
-  box-shadow:  0px -0px 12px 0 #00e673;
-  color: #00e673;
-  border: 2px solid #00e673;
+  box-shadow:  0px -0px 2px 0 #00e673;
+  background-color: #128149;
   transition: 20ms ease;
 }
 #creation-form button:active {
@@ -123,4 +117,3 @@
 .fas fa-ban {
   color: red;
 }
-/******* POPUP MENU *******/
