@@ -2,8 +2,7 @@
 /********************   HEADER STYLE   **********************/
 .header {
   width: 85vw;
-  height: 100px;
-  max-height: 100px;
+  height: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
