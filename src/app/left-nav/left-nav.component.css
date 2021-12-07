@@ -7,7 +7,11 @@
  display: flex;
  flex-direction: column;
  align-items: center;
-
+ background: #313131;
+ transition: 400ms ease-in;
+}
+.left-nav:hover {
+  border-right: 2px solid rgba(209, 93, 209, 1);
 }
 h1 {
   font-family: 'Luckiest Guy', cursive;

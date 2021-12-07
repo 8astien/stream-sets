@@ -9,6 +9,11 @@
   text-align: center;
   align-items: center;
   border-bottom: 2px solid #6C6B6B;
+  background: #313131;
+  transition: 400ms ease-in;
+}
+.header:hover {
+  border-bottom: 2px solid rgba(209, 93, 209, 1);
 }
 .header .linkAnim {
   color: white;
