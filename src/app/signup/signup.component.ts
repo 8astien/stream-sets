@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpclientService } from '../services/httpclient.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { HttpclientService } from '../services/httpclient.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private httpclientservice: HttpclientService ) { }
+  constructor(private httpclientservice: HttpclientService , private router:Router ) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,10 @@ export class SignupComponent implements OnInit {
     return this.SignForm.get('password')!.value;
   }
 
+  goHome() {
+    this.router.navigate(['/home']);
+  }
+
   postSignUp() {
 
     this.dataSignUp['username'] = this.getUsername();
@@ -43,10 +48,11 @@ export class SignupComponent implements OnInit {
 
       if(res["codeRetour"] === 0 ){
 
-        console.log("Compte Created : " + res["username"]); // TODO Pop-Up Account Created
+        window.alert("Compte Created : " + res["username"]); 
+        this.goHome();
 
       }else{
-        console.log("Error : " + res["username"]);// TODO Pop-Up Username already exist
+        window.alert("Error username already taken");
       }
       
     })

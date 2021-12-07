@@ -113,6 +113,7 @@ export class TopMenuComponent implements OnInit {
     this.dataSet['descSet'] = this.getDescSet();
 
     console.log(this.dataSet);
+    
     this.httpclientservice.postCreateSet(this.dataSet).subscribe((res: any) => {
       console.log("Bienvenue : " + res["username"]);
     })
