@@ -12,6 +12,10 @@
   display: flex;
   flex-direction: column;
 }
+.login-form {
+  min-height: 85vh;
+  max-height: 100%;
+}
 .login-box {
   margin-top: 2rem;
   max-width: 300px;
