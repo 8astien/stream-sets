@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { HttpclientService } from '../services/httpclient.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpclientService } from '../services/httpclient.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private httpclientservice: HttpclientService) { }
+  constructor(private httpclientservice: HttpclientService, private cookieService:CookieService) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +42,17 @@ export class LoginComponent implements OnInit {
     console.log(this.dataLogin);
     
     this.httpclientservice.postLogin(this.dataLogin).subscribe((res: any) => {
-      console.log("Bienvenue : " + res["username"]);
+      
+      if(res["codeRetour"] === 0 ){
+
+        console.log("Account exists : " + res["username"]);
+        this.cookieService.set("cookie-name" , "true");
+
+      }else{
+        console.log("Account not exists : " + res["username"]);
+        this.cookieService.set("cookie-name" , "false");
+      }
+
     })
   }
 }
