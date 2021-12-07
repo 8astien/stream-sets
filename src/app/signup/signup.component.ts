@@ -9,7 +9,7 @@ import { HttpclientService } from '../services/httpclient.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private httpclientservice: HttpclientService) { }
+  constructor(private httpclientservice: HttpclientService ) { }
 
   ngOnInit(): void {
   }
@@ -40,7 +40,15 @@ export class SignupComponent implements OnInit {
     console.log(this.dataSignUp);
 
     this.httpclientservice.postSignUp(this.dataSignUp).subscribe((res: any) => {
-      console.log("Bienvenue : " + res["username"]);
+
+      if(res["codeRetour"] === 0 ){
+
+        console.log("Compte Created : " + res["username"]); // TODO Pop-Up Account Created
+
+      }else{
+        console.log("Error : " + res["username"]);// TODO Pop-Up Username already exist
+      }
+      
     })
   }
 

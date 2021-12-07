@@ -1,16 +1,22 @@
 <div class="wrapper">
-    <div class="header">
-      <div *ngIf="isShown">
-        <form [formGroup]="DataForm" (ngSubmit)="postDataSet()" id="creation-form">
-          <label id="test" for="nameSet">Set Name :</label>
-          <input id="setNameInput" type="text" name="nameSet" formControlName="nameSet" value="" required>
-          <label for="descSet">Streamers List :</label>
-          <textarea id="setDescInput" type="descSet" name="descSet" formControlName="descSet" placeholder="streamer1, streamer2, streamer3, ..." required></textarea>
-          <button id="sendButton" type="submit" name="signin-btn">Create</button>
-        </form>
-      </div>
-      <div id="btnGen" #btnGen></div>
-      <a class="linkAnim" (click)="checkExist();">Manage Sets</a>
-      <i routerLink="/login" class="far fa-user-circle"></i>           
+  <div class="header">
+    <div *ngIf="isShown">
+      <form [formGroup]="DataForm" (ngSubmit)="postDataSet()" id="creation-form">
+        <label id="test" for="nameSet">Set Name :</label>
+        <input id="setNameInput" type="text" name="nameSet" formControlName="nameSet" value="" required>
+        <label for="descSet">Streamers List :</label>
+        <textarea id="setDescInput" type="descSet" name="descSet" formControlName="descSet"
+          placeholder="streamer1, streamer2, streamer3, ..." required></textarea>
+        <button id="sendButton" type="submit" name="signin-btn">Create</button>
+      </form>
     </div>
+    <div id="btnGen" #btnGen></div>
+    <a class="linkAnim" (click)="checkExist();">Manage Sets</a>
+    <div *ngIf='isConnected == true '>
+      <i routerLink="/logged" class="far fa-user-circle"></i>
+    </div>
+    <div *ngIf='isConnected == false '>
+      <i routerLink="/login" class="far fa-user-circle"></i>
+    </div>
+  </div>
 </div>

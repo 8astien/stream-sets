@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpclientService } from '../services/httpclient.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-top-menu',
@@ -11,10 +12,20 @@ import { Router } from '@angular/router';
 })
 export class TopMenuComponent implements OnInit {
 
-  constructor(private httpclientservice: HttpclientService, private el: ElementRef,
-    private renderer: Renderer2, private router: Router) { }
+  isConnected = false;
 
-  ngOnInit(): void { }
+  constructor(private httpclientservice: HttpclientService, private el: ElementRef,
+    private renderer: Renderer2, private router: Router, private cookieService: CookieService) { }
+
+  ngOnInit(): void {
+
+    if (this.cookieService.get("cookie-name") === "true") {
+      this.isConnected = true;
+
+    } else if (this.cookieService.get("cookie-name") === "false") {
+      this.isConnected = false;
+    }
+  }
 
   @ViewChild('btnGen', { static: false }) btnGen: ElementRef | undefined;
 
@@ -54,7 +65,7 @@ export class TopMenuComponent implements OnInit {
   }
 
   deleteSetButtons() {
-    let createBtn = document.getElementById('createSet')!; 
+    let createBtn = document.getElementById('createSet')!;
     let editBtn = document.getElementById('editSet')!;
     let parent = this.renderer.parentNode(createBtn);
     parent.removeChild(createBtn);
@@ -107,7 +118,7 @@ export class TopMenuComponent implements OnInit {
     })
   }
   hasRoute(route: string) {
-   return this.router.url.includes(route);
- }
+    return this.router.url.includes(route);
+  }
 
 }
