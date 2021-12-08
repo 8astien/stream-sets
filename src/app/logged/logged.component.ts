@@ -15,19 +15,22 @@ export class LoggedComponent implements OnInit {
 
 
   username:String = LoginComponent.userName;
+  selected = "";
 
   ngOnInit(): void {}
 
   goHome() {
     this.router.navigate(['/home']);
   }
-
+  testFunc(event:any) {
+    const value = event.target.value;
+    this.selected = value;
+    console.log(value);  
+  }
 
   disconnect() {
-
     this.cookieService.set("cookie-name" , "false");
     this.goHome();
-
   }
 
 }

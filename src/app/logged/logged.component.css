@@ -7,20 +7,112 @@
     justify-content: center;
     align-items: center;
 }
+#logText {
+    margin-top: 1rem;
+}
 .logged {
-    min-height: 85vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: start;
     margin-top: 2rem;
 }
+.box {
+    min-height: 85vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+#options {
+    width: 50%;
+    height: 50vh;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#options input, textarea, button {
+    margin-top: 1rem;
+}
+.smallTitle {
+    font-family: 'Luckiest Guy';
+}
+#dropdownOptions {
+    background: #313131;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    margin-top: 1rem;
+    width: 200px;
+}
+#setName {
+    width: 180px;
+    background: #313131;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+}
+#setsArea {
+    width: 70%;
+    height: 50%;
+    resize: none;
+    background: #313131;
+    border: 1px solid white;
+    color: white;
+}
+#edit-delete {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+#edit-delete button {
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 60ms ease;
+}
+#editBtn {
+    background-color: #c97c24;
+}
+#deleteBtn {
+    background-color: rgb(214, 32, 0);
+}
+#editBtn:hover {
+    background-color: #f19e3f;
+}
+#deleteBtn:hover {
+    background-color: rgb(233, 61, 31);
+}
+#edit-delete button:active {
+    transform: translateY(2px);
+}
+#deleteBtn:hover {
+    animation: rotate 600ms linear;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+        scale: 1;
+    }
+    50%{
+        transform: rotate(180deg);
+        scale: 0.2;
+    }
+    100%{
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
 .logged button {
     margin-top: 2rem;
     background-color: indianred;
     padding: 10px;
     color: white;
-    border: 2px solid indianred;
+    border: none;
     border-radius: 10px;
     transition: 100ms ease;
 }

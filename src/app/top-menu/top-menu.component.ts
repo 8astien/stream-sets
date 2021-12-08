@@ -29,9 +29,7 @@ export class TopMenuComponent implements OnInit {
 
   @ViewChild('btnGen', { static: false }) btnGen: ElementRef | undefined;
 
-  private btnExist: boolean = false;
   isShown: boolean = false;
-  private editEnable = false;
 
   private dataSet = {
     nameSet: "",
@@ -53,59 +51,9 @@ export class TopMenuComponent implements OnInit {
     return this.DataForm.get('descSet')!.value;
   }
 
-  checkExist() {
-
-    if (this.btnExist === false) {
-      this.createSetButtons();
-      this.btnExist = true;
-    } else {
-      this.deleteSetButtons();
-      this.btnExist = false;
-    }
-  }
-
-  deleteSetButtons() {
-    let createBtn = document.getElementById('createSet')!;
-    let editBtn = document.getElementById('editSet')!;
-    let parent = this.renderer.parentNode(createBtn);
-    parent.removeChild(createBtn);
-    parent.removeChild(editBtn);
-    this.isShown = false;
-  }
-
-  createSetButtons() {
-    const buttonCreate = this.renderer.createElement('button');
-    const textCreate = this.renderer.createText('Create Set');
-    const buttonEdit = this.renderer.createElement('button');
-    const textEdit = this.renderer.createText('Edit Set');
-    this.renderer.setAttribute(buttonCreate, "id", "createSet");
-    this.renderer.setAttribute(buttonEdit, "id", "editSet");
-    this.renderer.appendChild(buttonCreate, textCreate);
-    this.renderer.appendChild(buttonEdit, textEdit);
-    this.renderer.listen(buttonCreate, 'click', this.showForm.bind(this));
-    this.renderer.listen(buttonEdit, 'click', this.editLogo.bind(this));
-    this.renderer.appendChild(this.btnGen!.nativeElement, buttonCreate);
-    this.renderer.appendChild(this.btnGen!.nativeElement, buttonEdit);
-  }
   showForm() {
     this.isShown = true;
   };
-
-  editLogo() {
-
-    if (this.editEnable === false) {
-      let setList = document.getElementsByClassName("editable");
-      Array.from(setList).forEach(function (element) {
-        let createEdit = document.createElement("a");
-        let createDelete = document.createElement("a");
-        createEdit.className = "far fa-edit";
-        createDelete.className = "fas fa-ban";
-        element.appendChild(createEdit);
-        element.appendChild(createDelete);
-      });
-    }
-    this.editEnable = true;
-  }
 
   postDataSet() {
 
@@ -113,7 +61,7 @@ export class TopMenuComponent implements OnInit {
     this.dataSet['descSet'] = this.getDescSet();
 
     console.log(this.dataSet);
-    
+
     this.httpclientservice.postCreateSet(this.dataSet).subscribe((res: any) => {
       console.log("Bienvenue : " + res["username"]);
     })
@@ -123,3 +71,56 @@ export class TopMenuComponent implements OnInit {
   }
 
 }
+  // OLD FUNCTIONS
+  // private btnExist: boolean = false;
+
+  // private editEnable = false;
+  // checkExist() {
+
+  //   if (this.btnExist === false) {
+  //     this.createSetButtons();
+  //     this.btnExist = true;
+  //   } else {
+  //     this.deleteSetButtons();
+  //     this.btnExist = false;
+  //   }
+  // }
+
+  // deleteSetButtons() {
+  //   let createBtn = document.getElementById('createSet')!;
+  //   let editBtn = document.getElementById('editSet')!;
+  //   let parent = this.renderer.parentNode(createBtn);
+  //   parent.removeChild(createBtn);
+  //   parent.removeChild(editBtn);
+  //   this.isShown = false;
+  // }
+
+  // createSetButtons() {
+  //   const buttonCreate = this.renderer.createElement('button');
+  //   const textCreate = this.renderer.createText('Create Set');
+  //   const buttonEdit = this.renderer.createElement('button');
+  //   const textEdit = this.renderer.createText('Edit Set');
+  //   this.renderer.setAttribute(buttonCreate, "id", "createSet");
+  //   this.renderer.setAttribute(buttonEdit, "id", "editSet");
+  //   this.renderer.appendChild(buttonCreate, textCreate);
+  //   this.renderer.appendChild(buttonEdit, textEdit);
+  //   this.renderer.listen(buttonCreate, 'click', this.showForm.bind(this));
+  //   this.renderer.listen(buttonEdit, 'click', this.editLogo.bind(this));
+  //   this.renderer.appendChild(this.btnGen!.nativeElement, buttonCreate);
+  //   this.renderer.appendChild(this.btnGen!.nativeElement, buttonEdit);
+  // }
+  // editLogo() {
+
+  //   if (this.editEnable === false) {
+  //     let setList = document.getElementsByClassName("editable");
+  //     Array.from(setList).forEach(function (element) {
+  //       let createEdit = document.createElement("a");
+  //       let createDelete = document.createElement("a");
+  //       createEdit.className = "far fa-edit";
+  //       createDelete.className = "fas fa-ban";
+  //       element.appendChild(createEdit);
+  //       element.appendChild(createDelete);
+  //     });
+  //   }
+  //   this.editEnable = true;
+  // }
