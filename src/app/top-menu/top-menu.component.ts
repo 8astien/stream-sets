@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpclientService } from '../services/httpclient.service';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../services/login.service';
 
@@ -16,7 +15,7 @@ export class TopMenuComponent implements OnInit {
 
   isConnected: boolean | undefined;
 
-  constructor(private httpclientservice: HttpclientService, private loginService:LoginService) { }
+  constructor(private httpclientservice: HttpclientService, private loginService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
 

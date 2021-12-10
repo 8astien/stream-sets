@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
 import { TwitchEmbed, TwitchEmbedLayout } from 'twitch-player';
-import { LoginComponent } from '../login/login.component';
 import { HttpclientService } from '../services/httpclient.service';
-import { map } from 'rxjs/operators';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class LeftNavComponent implements OnInit {
   public setList: string[] = [];
   public streamList: string[] = [];
 
-  constructor(private httpclientservice: HttpclientService, private loginService: LoginService) { }
+  constructor(private httpclientservice: HttpclientService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.loginService.getLocalStorage() === "true") {
@@ -33,13 +32,11 @@ export class LeftNavComponent implements OnInit {
 
     this.dataSets['username'] = this.loginService.getDataLocalStorage("username");
     let listSetName: string[] = [];
-    //let listStream: string[] = [];
 
     this.httpclientservice.postSets(this.dataSets).subscribe((response: any) => {
 
       for (let index = 0; index < response["listSets"].length; index++) {
         listSetName.push(response["listSets"][index]["setName"]);
-        //listStream.push(response["listSets"][index]["setDesc"]);
       }
 
       this.loginService.storeDataOnLocalStorage("listStream", response["listSets"]);
@@ -53,23 +50,24 @@ export class LeftNavComponent implements OnInit {
   initList(set: any, value: any): any {
 
     console.log("Init : " + set);
-    
+
     let result: any[] = [];
 
     let words = set.split(',');
-   
+
 
     for (let index = 0; index < words.length; index++) {
       result.push(words[index]);
     }
 
     console.log("result : " + result[0]);
-    
+
     return result;
   }
 
-  printPlayers(value: any): void {
+  createPlayers(value: any) {
 
+    this.deletePlayers("player");
     let streamList: any[] = [];
     let list = this.loginService.getDataLocalStorage("listStream");
     let temp: string[] = [];
@@ -78,16 +76,12 @@ export class LeftNavComponent implements OnInit {
     list.forEach((set: { [x: string]: any; }) => {
       let nameSet = set["setName"];
       if (nameSet === value) {
-        //streamList.push(set["setDesc"]);
         temp = set["setDesc"];
       }
     });
 
-    streamList = this.initList(temp , value);
+    streamList = this.initList(temp, value);
 
-    console.log("StreamList :" + streamList);
-
-    //let streamList = list;
     streamList.forEach(function (value) {
       let playerFrame = document.createElement("div");
       playerFrame.id = value;
@@ -102,6 +96,21 @@ export class LeftNavComponent implements OnInit {
       });
     });
   }
-}
 
+  deletePlayers(className: any) {
+
+    const elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+      elements[0].parentNode?.removeChild(elements[0]);
+    }
+  }
+
+  printPlayers(value: any): void {
+
+    this.router.navigate(['/home']);
+
+    setTimeout(() => { this.createPlayers(value) }, 1);
+  
+  }
+}
 

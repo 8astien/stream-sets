@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../services/login.service';
 
@@ -25,8 +24,6 @@ export class LoggedComponent implements OnInit {
     
     if(this.loginService.getLocalStorage() === "true"){
       this.username = this.loginService.getDataLocalStorage("username");
-    }else{
-      this.username = "Deconnected";
     }
   }
 
