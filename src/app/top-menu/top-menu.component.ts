@@ -52,7 +52,11 @@ export class TopMenuComponent implements OnInit {
   }
 
   showForm() {
-    this.isShown = true;
+    if (this.isShown === false) {
+      this.isShown = true;
+    } else {
+      this.isShown = false;
+    }
   };
 
   postDataSet() {

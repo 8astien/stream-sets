@@ -57,7 +57,9 @@
 }
 #setsArea {
     width: 70%;
+    min-width: 200px;
     height: 50%;
+    min-height: 100px;
     resize: none;
     background: #313131;
     border: 1px solid white;
