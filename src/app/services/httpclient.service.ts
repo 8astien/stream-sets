@@ -8,29 +8,29 @@ export class HttpclientService {
  
   constructor(private httpClient: HttpClient) { }
 
-  private urlCreateSet = "//localhost:8080/dataSet";
-  private urlLogin = "//localhost:8080/dataLogin";
-  private urlSignUp = "//localhost:8080/dataSign";
+  private urlCreateSet = "//localhost:8080/CreateSet";
+  private urlLogin = "//localhost:8080/Login";
+  private urlSignUp = "//localhost:8080/Sign";
+  private urlGetSets = "//localhost:8080/GetSets";
 
   public postCreateSet(objet: any) {
-
-    let data_header = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.httpClient.post(this.urlCreateSet, objet);
   }
 
   public postLogin(objet: any) {
 
-    let data_header = new HttpHeaders({ 'Content-Type': 'application/json' });
-
     return this.httpClient.post(this.urlLogin, objet);
   }
 
   public postSignUp(objet: any) {
 
-    let data_header = new HttpHeaders({ 'Content-Type': 'application/json' });
-
     return this.httpClient.post(this.urlSignUp, objet);
+  }
+
+  public postSets(objet: any) {
+
+    return this.httpClient.post(this.urlGetSets, objet);
   }
 
 }

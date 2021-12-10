@@ -11,7 +11,6 @@ import { LeftNavComponent } from './left-nav/left-nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoggedComponent } from './logged/logged.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

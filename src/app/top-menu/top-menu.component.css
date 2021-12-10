@@ -1,14 +1,20 @@
-
 /********************   HEADER STYLE   **********************/
 .header {
   width: 85vw;
   height: 15vh;
+  min-height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   text-align: center;
   align-items: center;
   border-bottom: 2px solid #6C6B6B;
+  background: #313131;
+  overflow: hidden;
+  transition: 400ms ease-in;
+}
+.header:hover {
+  border-bottom: 2px solid rgba(209, 93, 209, 1);
 }
 .header .linkAnim {
   color: white;
@@ -23,8 +29,7 @@
   background-position: bottom center;
   background-size: 80% 2px;
   background-repeat: no-repeat;
-  padding-bottom: 4px;
-  transition: 40ms ease;
+  transition: 350ms ease;
 }
 .header .linkAnim:active {
   color: #F43CBD;
@@ -32,55 +37,34 @@
 .header i{
   font-size: 2rem;
   margin-right: 2rem;
-  transition: 250ms;
 }
 .header i:hover {
   color: #F43CBD;
   cursor: pointer;
+  animation: rotate 1.2s linear infinite;
 }
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+    scale: 1;
+  }
 
-/******* BUTTONS STYLE  ******/
-#createSet {
-  margin: 0 20px;
-  padding: 10px;
-  background-color: #16a55e;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  transition: 80ms ease;
+  50% {
+    transform: rotate(180deg);
+    scale: 1.2;
+  }
+  100% {
+    transform: rotate(359deg);
+    scale: 1;
+  }
 }
-#editSet {
-  margin: 0 20px;
-  padding: 10px;
-  background-color: #bd6501;
-  color: rgb(233, 233, 233);
-  border: none;
-  border-radius: 10px;
-  transition: 80ms ease;
-}
-#createSet:hover {
-  background-color: #128149;
-}
-#createSet:active{
-  box-shadow: inset -1px -1px 2px 0 #68df51;
-  transform: translateY(1px);
-}
-#editSet:hover {
-  background-color: #a35701;
-}
-#editSet:active {
-  box-shadow: inset -1px -1px 2px 0px #ffcc00;
-  transform: translateY(1px);
-}
-
 /******** CREATION FORM STYLES ********/
 #creation-form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 50vw;
-  min-width: 50vw;
+  width: 70vw;
 }
 #creation-form input, textarea {
   border: 2px solid white;
@@ -115,4 +99,48 @@
 }
 .fas fa-ban {
   color: red;
+}
+/* TOOLTIP */
+.tooltip {
+  background-color: #272727;
+  color: #fff;
+  font-family: Verdana;
+  font: bold;
+  font-size: .5em;
+  border-radius: 50%;
+  padding: 5px 8px;
+  margin-right: 1rem;
+  cursor: help;
+}
+
+.tooltip .tooltip--text {
+  visibility: hidden;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  width: 150px;
+  margin-left: 10px;
+  top: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltip--text {
+  visibility: visible;
+}
+/* MEDIA QUERIES */
+@media (max-width: 1100px) {
+  .header {
+    width: 100vw;
+  }
+  #creation-form {
+    font-size: .8rem;
+  }
+}
+@media (max-width: 750px) {
+  .linkAnim {
+    visibility: hidden;
+  }
 }

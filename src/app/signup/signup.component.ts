@@ -33,8 +33,8 @@ export class SignupComponent implements OnInit {
     return this.SignForm.get('password')!.value;
   }
 
-  goHome() {
-    this.router.navigate(['/home']);
+  goLogin() {
+    this.router.navigate(['/login']);
   }
 
   postSignUp() {
@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
       if(res["codeRetour"] === 0 ){
 
         window.alert("Compte Created : " + res["username"]); 
-        this.goHome();
+        this.goLogin();
 
       }else{
         window.alert("Error username already taken");

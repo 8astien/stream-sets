@@ -12,4 +12,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 1rem;
 }
+.alert {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  color: crimson;
+}
+@media (max-width: 800px) {
+  .alert {
+    visibility: visible;
+  }
+} 
