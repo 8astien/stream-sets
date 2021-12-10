@@ -1,35 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from '../login/login.component';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-logged',
   templateUrl: './logged.component.html',
   styleUrls: ['./logged.component.css'],
-  providers:[LoginComponent]
+  providers: [LoginComponent]
 })
 export class LoggedComponent implements OnInit {
 
-  constructor(private cookieService: CookieService , private router:Router , private login:LoginComponent) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
-
-  username:String = LoginComponent.userName;
+  username: string = "";
   selected = "";
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    console.log("Init logged C : " + this.loginService.getLocalStorage());
+    console.log("userName Before : " + this.username);
+
+    if (this.loginService.getLocalStorage() === "true") {
+      this.username = this.loginService.getDataLocalStorage("username");
+    } else {
+      this.username = "Deconnected";
+    }
+  }
 
   goHome() {
     this.router.navigate(['/home']);
   }
-  testFunc(event:any) {
+
+  testFunc(event: any) {
     const value = event.target.value;
     this.selected = value;
-    console.log(value);  
+    console.log(value);
   }
 
   disconnect() {
-    this.cookieService.set("cookie-name" , "false");
+    this.loginService.DeleteLocalStorage();
     this.goHome();
   }
 
