@@ -1,9 +1,9 @@
 
 /********************   HEADER STYLE   **********************/
 .header {
-  width: 85vw;
+  width: 100vw;
   height: 15vh;
-  min-height: 80px;
+  min-height: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -59,11 +59,12 @@
     scale: 1;
   }
 }
+
 /******** CREATION FORM STYLES ********/
 #creation-form {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   width: 70vw;
 }
@@ -71,6 +72,10 @@
   border: 2px solid white;
   background: none;
   color: white;
+  margin-right: 1rem;
+}
+#creation-form label {
+  margin-right: 1rem;
 }
 #setNameInput {
   width: 100px;
@@ -81,7 +86,7 @@
   height: 50px;
 }
 #creation-form button {
-  margin: 0 20px;
+  margin-right: 1rem;
   padding: 10px;
   background-color: #16a55e;
   color: white;
@@ -133,9 +138,6 @@
 }
 /* MEDIA QUERIES */
 @media (max-width: 1100px) {
-  .header {
-    width: 100vw;
-  }
   #creation-form {
     font-size: .8rem;
   }

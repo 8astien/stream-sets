@@ -1,5 +1,4 @@
 <div class="wrapper">
-    <app-left-nav></app-left-nav>
     <div class="subwrap">
         <app-top-menu></app-top-menu>
         <div class="box">
@@ -8,10 +7,7 @@
                 <h3 class="smallTitle">Manage existing sets :</h3>
                 <select id="dropdownOptions" name="" [(ngModel)]="selected" (change)='testFunc($event)'>
                     <option value="" disabled selected hidden>Please Choose...</option>
-                    <option value="1">Set 1</option>
-                    <option value="2">Set 2</option>
-                    <option value="3">Set 3</option>
-                    <option value="4">Set 4</option>
+                    <option *ngFor="let item of gridList" class="option-item">{{item}}</option>
                 </select>
                 <input type="text" id="setName">
                 <textarea name="" id="setsArea"></textarea>

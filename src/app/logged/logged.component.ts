@@ -15,6 +15,8 @@ export class LoggedComponent implements OnInit {
 
   username: string = "";
   selected = "";
+  public gridList = ['test', 'gotage', 'Jeelllaplusbelle', 'MaghlaDegueulasse', 'SardLeBest', 'Adreitael'];
+
 
   ngOnInit(): void {
 

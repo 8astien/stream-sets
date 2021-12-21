@@ -1,5 +1,4 @@
 <div class="wrapper">
-  <app-left-nav></app-left-nav>
   <div class="subwrap">
     <app-top-menu></app-top-menu>
     <div class="login-form">
@@ -7,8 +6,12 @@
         <form [formGroup]="SignForm" (ngSubmit)="postSignUp()" id="account-form">
           <label id="test" for="username">Username : </label>
           <input type="text" name="username" formControlName="username" value="" required>
+          
           <label for="password">Password : </label>
-          <input type="password" name="password" formControlName="password" value="" required>
+          <input type="password" name="password" formControlName="password" required>
+          <label for="password">Confirm Password : </label>
+          <input type="password" name="password-confirmation" formControlName="password_confirmation" required>
+
           <button type="submit" name="signin-btn">Create Account</button>
         </form>
       </div>

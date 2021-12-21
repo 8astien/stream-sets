@@ -1,6 +1,6 @@
 .wrapper {
   display: flex;
-  width: 85vw;
+  width: 100vw;
   max-width: 100%;
 }
 .subwrap{
@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 1rem;
+  z-index: -2;
 }
 .alert {
   position: absolute;

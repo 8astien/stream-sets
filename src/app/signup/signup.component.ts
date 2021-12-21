@@ -17,7 +17,8 @@ export class SignupComponent implements OnInit {
 
   SignForm = new FormGroup({
     username: new FormControl(),
-    password: new FormControl()
+    password: new FormControl(),
+    password_confirmation: new FormControl()
   })
 
   private dataSignUp = {
@@ -32,6 +33,18 @@ export class SignupComponent implements OnInit {
   getPassword() {
     return this.SignForm.get('password')!.value;
   }
+  getPasswordConfirm() {
+    return this.SignForm.get('password_confirmation')!.value;
+  }
+  checkPassword() {
+    if (this.getPassword() === this.getPasswordConfirm()) {
+      return true;
+      // POP UP CREATED ACCOUNT SUCCESSFULLY
+    } else {
+      return false;
+      // POP UP PASSWORDS ARENT MATCHING
+    }
+  }
 
   goHome() {
     this.router.navigate(['/home']);
@@ -39,6 +52,7 @@ export class SignupComponent implements OnInit {
 
   postSignUp() {
 
+    if (this.checkPassword()===true ) {  
     this.dataSignUp['username'] = this.getUsername();
     this.dataSignUp['password'] = this.getPassword();
 
@@ -47,15 +61,13 @@ export class SignupComponent implements OnInit {
     this.httpclientservice.postSignUp(this.dataSignUp).subscribe((res: any) => {
 
       if(res["codeRetour"] === 0 ){
-
         window.alert("Compte Created : " + res["username"]); 
         this.goHome();
-
       }else{
         window.alert("Error username already taken");
       }
       
-    })
+    })}
   }
 
 

@@ -24,7 +24,7 @@ export class LeftNavComponent implements OnInit {
   dataSets = {
     "username": ""
   }
-
+  public gridList = ['test', 'gotage', 'Jeelllaplusbelle', 'MaghlaDegueulasse', 'SardLeBest', 'Adreitael'];
   postGetSets() {
 
     this.dataSets['username'] = this.loginService.getDataLocalStorage("username");
