@@ -61,8 +61,6 @@ export class LoggedComponent implements OnInit {
     this.httpclientservice.postSets(this.dataSets).subscribe((response: any) => {
       this.loginService.storeDataOnLocalStorage("id_User", response["id_User"]);
 
-      console.log("Id User : " + this.loginService.getDataLocalStorage("id_User"));
-
       for (let index = 0; index < response["listSets"].length; index++) {
         listSetName.push(response["listSets"][index]["setName"]);
         listSetDesc.push(response["listSets"][index]["setDesc"]);
@@ -82,9 +80,6 @@ export class LoggedComponent implements OnInit {
   changeValue(event: any) {
     const value = event.target.value;
     this.selected = value;
-
-    console.log("Value : " + value);
-    console.log(this.loginService.getDataLocalStorage("listStream"));
 
     let listTemp = this.loginService.getDataLocalStorage("listStream");
 
@@ -109,10 +104,6 @@ export class LoggedComponent implements OnInit {
 
     this.editSets['nameSet'] = nameSet;
     this.editSets['descSet'] = descSet;
-    //this.editSets['setId'] = this.loginService.getDataLocalStorage("id_Set");
-    //this.editSets['userId'] = this.loginService.getDataLocalStorage("id_User");
-
-    console.log("Edit Set : "); console.log(this.editSets);
     
     this.httpclientservice.postEdit(this.editSets).subscribe((response: any) => {
 

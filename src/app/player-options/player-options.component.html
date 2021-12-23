@@ -4,22 +4,10 @@
       <!-- OPTIONS HERE -->
       <div class="options options--chat">
         <label class="options--chat--lbl">
-          Enable Chat :<input type="checkbox"> 
+          Enable Chat :<input type="checkbox" [checked]="isChecked" (change)="toggleChat()"> 
         </label>
       </div>
-      <span class="sizespan">Players Size :</span>
-      <form class="options options--playersize">
-            <label> Small Players
-              <input type="radio" name="size">
-            </label>
-            <label> Normal Players
-              <input type="radio" name="size">
-            </label>
-            <label> Large Players
-              <input type="radio" name="size">
-            </label> 
-          </form>
-      <button class="options options--activate">
+      <button class="options options--activate" (click)="sendChatStatus()">
         Apply Changes
       </button>
     </div>

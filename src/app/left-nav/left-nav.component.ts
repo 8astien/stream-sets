@@ -1,47 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { TwitchEmbed, TwitchEmbedLayout } from 'twitch-player';
-import { HttpclientService } from '../services/httpclient.service';
+import { TwitchEmbed, TwitchEmbedLayout, TwitchEmbedOptions } from 'twitch-player';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
+import { PlayerOptionsComponent } from '../player-options/player-options.component';
 
 @Component({
   selector: 'app-left-nav',
   templateUrl: './left-nav.component.html',
-  styleUrls: ['./left-nav.component.css']
+  styleUrls: ['./left-nav.component.css'],
+  providers: [PlayerOptionsComponent]
 })
 export class LeftNavComponent implements OnInit {
 
   public setList: string[] = [];
   public streamList: string[] = [];
+  public chatStatus : boolean = false;
+  public test : any;
 
-  constructor(private httpclientservice: HttpclientService, private loginService: LoginService) { }
+  constructor(private loginService: LoginService,
+    private router: Router, private playerOption: PlayerOptionsComponent) { }
 
   ngOnInit(): void {
     if (this.loginService.getLocalStorage() === "true") {
       this.setList = this.loginService.getDataLocalStorage("listName");
-
     }
   }
 
   initList(set: any, value: any): any {
 
     console.log("Init : " + set);
-    
+
     let result: any[] = [];
 
     let words = set.split(',');
-   
+
 
     for (let index = 0; index < words.length; index++) {
       result.push(words[index]);
     }
 
     console.log("result : " + result[0]);
-    
+
     return result;
   }
 
-  printPlayers(value: any): void {
+  deletePlayers(className: any) {
 
+    const elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+      elements[0].parentNode?.removeChild(elements[0]);
+    }
+  }
+
+  createPlayers(value: any, chat: any, resizeWidth: any, resizeHeight: any) {
+
+    this.deletePlayers("player");
     let streamList: any[] = [];
     let list = this.loginService.getDataLocalStorage("listStream");
     let temp: string[] = [];
@@ -54,9 +67,7 @@ export class LeftNavComponent implements OnInit {
       }
     });
 
-    streamList = this.initList(temp , value);
-
-    console.log("StreamList :" + streamList);
+    streamList = this.initList(temp, value);
 
     streamList.forEach(function (value) {
       let playerFrame = document.createElement("div");
@@ -64,12 +75,40 @@ export class LeftNavComponent implements OnInit {
       playerFrame.className = "player";
       document.getElementById("players")!.appendChild(playerFrame);
       const embed = new TwitchEmbed(value, {
-        width: 1200 / 2,
-        height: 720 / 2,
+        width: 1200 / resizeWidth,
+        height: 720 / resizeHeight,
         channel: value,
         muted: true,
-        layout: TwitchEmbedLayout.VIDEO
+        layout: chat
       });
     });
   }
+
+  printPlayers(value: any): void {
+
+    this.router.navigate(['/home']);
+    let enableChat = TwitchEmbedLayout.VIDEO;
+
+    if (this.chatStatus) {
+      enableChat = TwitchEmbedLayout.VIDEO_WITH_CHAT;
+      setTimeout(() => { this.createPlayers(value, enableChat, 1, 1.5) }, 1);
+
+    } else {
+      enableChat = TwitchEmbedLayout.VIDEO;
+      setTimeout(() => { this.createPlayers(value, enableChat, 2, 2) }, 1);
+    }
+
+    this.test = value;
+  }
+
+  receiveStatus(status: any) {
+    this.chatStatus = status;
+    this.printPlayers(this.test);
+    console.log("Test Receive Status Chat : " + this.chatStatus);
+    
+    
+  }
+
 }
+
+

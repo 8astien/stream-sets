@@ -1,5 +1,6 @@
 <div class="left-nav">
   <span class="left-nav--clickable">Select Grid <i class="fas fa-caret-down"></i> </span>
+  <app-player-options (sendStatus)='receiveStatus($event)' > </app-player-options>
   <div class="sets-list">
     <ul id="set-list-wrap">
       <li *ngFor="let item of setList" class="editable" (click)="printPlayers(item);"><a>{{item}}</a></li>

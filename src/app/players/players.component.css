@@ -12,8 +12,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  z-index: -2;
 }
+
 .alert {
   position: absolute;
   visibility: hidden;
