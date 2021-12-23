@@ -11,13 +11,21 @@
  top: 15vh;
  margin-left: 1rem;
  z-index: 99;
+ font-family: 'Quicksand', sans-serif;
 }
 
+.left-nav--clickable {
+  display: flex;
+  justify-content: center;
+}
+.fa-caret-down {
+  margin-left: 1em;
+}
 .left-nav li{
   visibility: hidden;
 }
 
-.left-nav:hover, .left-nav--clickable:hover {
+.left-nav:hover {
   height: 300px;
   overflow-y: auto;
 }
@@ -28,6 +36,7 @@
 
 #set-list-wrap {
   margin-top: 1rem;
+  margin-left: .5rem;
 }
 
 .editable {

@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-top: 2rem;
 }
 .box {
@@ -78,7 +78,6 @@
   color: white;
   border: none;
   border-radius: 10px;
-  transition: 60ms ease;
 }
 #editBtn {
     background-color: #c97c24;
@@ -95,23 +94,7 @@
 #edit-delete button:active {
     transform: translateY(2px);
 }
-#deleteBtn:hover {
-    animation: rotate 600ms linear;
-}
-@keyframes rotate{
-    0%{
-        transform: rotate(0deg);
-        scale: 1;
-    }
-    50%{
-        transform: rotate(180deg);
-        scale: 0.2;
-    }
-    100%{
-        transform: rotate(360deg);
-        scale: 1;
-    }
-}
+
 .logged button {
     margin-top: 2rem;
     background-color: indianred;

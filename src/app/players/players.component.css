@@ -8,6 +8,7 @@
   flex-direction: column;
 }
 #players {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -23,5 +24,6 @@
 @media (max-width: 800px) {
   .alert {
     visibility: visible;
+    margin-top: 4rem;
   }
 } 

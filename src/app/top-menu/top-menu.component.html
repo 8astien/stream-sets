@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="header">
+    <h1 class="title"><a routerLink="/home">Stream Grids</a></h1>
     <div *ngIf="isShown">
       <form [formGroup]="DataForm" (ngSubmit)="postDataSet()" id="creation-form">
         <label id="test" for="nameSet">Set Name :</label>
@@ -14,7 +15,7 @@
       </form>
     </div>
     <div id="btnGen" #btnGen></div>
-    <a class="linkAnim" (click)="showForm();">Create a Set</a>
+    <a class="linkAnim" (click)="showForm();">Create a Grid</a>
     <div *ngIf='isConnected == true '>
       <i routerLink="/logged" class="far fa-user-circle"></i>
     </div>

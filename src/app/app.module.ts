@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoggedComponent } from './logged/logged.component';
+import { PlayerOptionsComponent } from './player-options/player-options.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { LoggedComponent } from './logged/logged.component';
     LeftNavComponent,
     SignupComponent,
     LoggedComponent,
+    PlayerOptionsComponent,
 
   ],
   imports: [
