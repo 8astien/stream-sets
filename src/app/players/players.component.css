@@ -6,7 +6,6 @@
 .subwrap{
   display: flex;
   flex-direction: column;
-
 }
 #players {
   display: flex;

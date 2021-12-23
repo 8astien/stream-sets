@@ -12,6 +12,8 @@ export class HttpclientService {
   private urlLogin = "//localhost:8080/Login";
   private urlSignUp = "//localhost:8080/Sign";
   private urlGetSets = "//localhost:8080/GetSets";
+  private urlEdit = "//localhost:8080/EditSet";
+  private urlDelete = "//localhost:8080/DeleteSet";
 
   public postCreateSet(objet: any) {
 
@@ -31,6 +33,16 @@ export class HttpclientService {
   public postSets(objet: any) {
 
     return this.httpClient.post(this.urlGetSets, objet);
+  }
+
+  public postEdit(objet: any) {
+
+    return this.httpClient.post(this.urlEdit, objet);
+  }
+
+  public postDelete(objet: any) {
+
+    return this.httpClient.post(this.urlDelete, objet);
   }
 
 }

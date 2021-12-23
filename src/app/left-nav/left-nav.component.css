@@ -9,7 +9,8 @@
  border-bottom-right-radius: 10px;
  transition: 200ms ease;
  top: 15vh;
- z-index: -1;
+ margin-left: 1rem;
+ z-index: 99;
 }
 
 .left-nav li{
@@ -18,7 +19,7 @@
 
 .left-nav:hover, .left-nav--clickable:hover {
   height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .left-nav:hover li {

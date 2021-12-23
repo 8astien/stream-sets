@@ -5,15 +5,15 @@
             <span id="logText">You are logged in as {{username}}</span>
             <div id="options">
                 <h3 class="smallTitle">Manage existing sets :</h3>
-                <select id="dropdownOptions" name="" [(ngModel)]="selected" (change)='testFunc($event)'>
+                <select id="dropdownOptions" name="" [(ngModel)]="selected" (change)='changeValue($event)'>
                     <option value="" disabled selected hidden>Please Choose...</option>
-                    <option *ngFor="let item of gridList" class="option-item">{{item}}</option>
+                    <option *ngFor="let item of setList" class="option-item">{{item}}</option>
                 </select>
-                <input type="text" id="setName">
+                <input type="text" id="setName" value="">
                 <textarea name="" id="setsArea"></textarea>
                 <div id="edit-delete">
-                    <button id="editBtn">Edit Set</button>
-                    <button id="deleteBtn">Delete Set</button>
+                    <button id="editBtn" (click)="editSet()">Edit Set</button>
+                    <button id="deleteBtn" (click)="deleteSet()">Delete Set</button>
                 </div>
             </div>
             <div class="logged">
