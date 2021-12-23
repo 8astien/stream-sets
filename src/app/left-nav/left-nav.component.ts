@@ -16,6 +16,8 @@ export class LeftNavComponent implements OnInit {
   public streamList: string[] = [];
   public chatStatus : boolean = false;
   public test : any;
+  chatDisplay: boolean = false;
+  public isChecked: boolean = false;
 
   constructor(private loginService: LoginService,
     private router: Router, private playerOption: PlayerOptionsComponent) { }
@@ -101,12 +103,14 @@ export class LeftNavComponent implements OnInit {
     this.test = value;
   }
 
-  receiveStatus(status: any) {
-    this.chatStatus = status;
+  toggleChat() {
+    this.isChecked = !this.isChecked;
+    console.log("isChecked : " + this.isChecked);
+    this.chatDisplay = this.isChecked;
+  }
+
+  displayChat() {
     this.printPlayers(this.test);
-    console.log("Test Receive Status Chat : " + this.chatStatus);
-    
-    
   }
 
 }
