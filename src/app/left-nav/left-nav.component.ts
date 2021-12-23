@@ -14,9 +14,8 @@ export class LeftNavComponent implements OnInit {
 
   public setList: string[] = [];
   public streamList: string[] = [];
-  public chatStatus : boolean = false;
   public test : any;
-  chatDisplay: boolean = false;
+  public chatDisplay: boolean = false;
   public isChecked: boolean = false;
 
   constructor(private loginService: LoginService,
@@ -91,7 +90,7 @@ export class LeftNavComponent implements OnInit {
     this.router.navigate(['/home']);
     let enableChat = TwitchEmbedLayout.VIDEO;
 
-    if (this.chatStatus) {
+    if (this.isChecked) {
       enableChat = TwitchEmbedLayout.VIDEO_WITH_CHAT;
       setTimeout(() => { this.createPlayers(value, enableChat, 1, 1.5) }, 1);
 
@@ -106,7 +105,6 @@ export class LeftNavComponent implements OnInit {
   toggleChat() {
     this.isChecked = !this.isChecked;
     console.log("isChecked : " + this.isChecked);
-    this.chatDisplay = this.isChecked;
   }
 
   displayChat() {
